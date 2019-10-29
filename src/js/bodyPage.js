@@ -4,6 +4,9 @@ const body = new TElement(document.body);
 
 const corpo = new TElement('DIV');
 
+const texto = new TElement('H1');
+
+corpo.addElement('texto', texto);
 body.addElement('corpo',corpo);
 
 document.documentElement.style.height = '100%';
@@ -13,6 +16,13 @@ corpo.style.borderRadius = '0';
 corpo.style.transition = '0.2s';
 corpo.style.width = '100%';
 corpo.style.height = '100%';
+
+texto.style.color = '#fff';
+texto.style.position = 'absolute';
+texto.style.top = '50%';
+texto.style.left = '50%';
+texto.style.transform = 'translate(-50%,-50%)';
+texto.element.innerText = 'Faça Você a Diferença!';
 
 var rgb = [ 0, 0, 0 ];
 var cont = [true,true,true];
