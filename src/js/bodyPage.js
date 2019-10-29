@@ -21,6 +21,9 @@ texto.style.color = '#fff';
 texto.style.position = 'absolute';
 texto.style.top = '50%';
 texto.style.left = '50%';
+texto.style.margin = '0';
+texto.style.padding = '0';
+texto.style.size = '38px';
 texto.style.transform = 'translate(-50%,-50%)';
 texto.element.innerText = 'Faça Você a Diferença!';
 
