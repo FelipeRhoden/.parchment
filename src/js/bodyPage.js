@@ -2,12 +2,7 @@ import { TElement } from "../class/model.js";
 
 const body = new TElement(document.body);
 
-
-
-
-
-
-/*const corpo = new TElement('DIV');
+const corpo = new TElement('DIV');
 
 body.addElement('corpo',corpo);
 
@@ -110,4 +105,4 @@ setInterval(() => {
     console.log(cor);
 
     corpo.style.background = cor;
-}, 230);*/
+}, 230);
