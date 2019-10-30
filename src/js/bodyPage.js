@@ -24,6 +24,7 @@ texto.style.left = '50%';
 texto.style.margin = '0';
 texto.style.padding = '0';
 texto.style.size = '38px';
+texto.style.textAlign = "center";
 texto.style.transform = 'translate(-50%,-50%)';
 texto.element.innerText = 'Faça Você a Diferença!';
 
