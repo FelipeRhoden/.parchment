@@ -6,5 +6,4 @@ const title = new TElement("H1");
 
 body.addElement('title',title);
 
-
 title.element.appendChild(document.createTextNode('.parchament'));
