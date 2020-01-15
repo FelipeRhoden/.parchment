@@ -14,6 +14,6 @@ body.addElement('botao',botao);
 title.element.appendChild(texto);
 botao.element.innerText = 'Alterar Titulo';
 
-botao.addEvent('onClick', () => {
+botao.addEvent('click', () => {
   texto.data = prompt('Novo Titulo');
 });
