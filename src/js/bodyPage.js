@@ -7,3 +7,7 @@ const title = new TElement("H1");
 body.addElement('t',title);
 
 title.element.appendChild(document.createTextNode('.parchament'));
+
+function parchment(){
+  return TElement;
+}
