@@ -4,6 +4,16 @@ const body = new TElement(document.body);
 
 const title = new TElement("H1");
 
-body.addElement('t',title);
+const botao = new TElement("BUTTON")
 
-title.element.appendChild(document.createTextNode('.parchament'));
+const texto = document.createTextNode('.parchament');
+
+body.addElement('t',title);
+body.addElement('botao',botao);
+
+title.element.appendChild(texto);
+botao.element.innerText = 'Alterar Titulo';
+
+botao.addEvent('onClick', () => {
+  texto.data = prompt('Novo Titulo');
+});
