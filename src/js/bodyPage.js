@@ -4,7 +4,7 @@ const body = new parchment.TElement(document.body);
 
 const title = new parchment.TElement("H1");
 
-const botao = new TElement("BUTTON")
+const botao = new parchment.TElement("BUTTON")
 
 body.addElement('title',title);
 body.addElement('botao',botao);
