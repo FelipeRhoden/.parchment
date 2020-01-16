@@ -13,5 +13,5 @@ title.addElement('text',new parchment.TText('Novo Titulo'));
 botao.addElement('text',new parchment.TText('Alterar Titulo'));
 
 botao.addEvent('click', () => {
-    title.text.get = prompt('Novo Titulo');
+    title.text.set = prompt('Novo Titulo');
 });
