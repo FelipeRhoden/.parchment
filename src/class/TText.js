@@ -53,7 +53,7 @@
      * @param {string} set - recebe o texto que sera armazenado;
      */
 
-     set set (text){
+     set text (text){
 
         this._element.data = text;
 
@@ -83,7 +83,7 @@
      * @returns {string} - retorna o texto que sera armazenado;
      */
 
-    get get (){
+    get text (){
 
         return this._element.data;
 
