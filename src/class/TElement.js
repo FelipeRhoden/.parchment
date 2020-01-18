@@ -108,7 +108,7 @@ export class TElement {
      * @static
      * @method
      * @param {string} name - nome da propriedade dada ao atributo
-     * @param {TElement} attribute - atributo que sera inserido 
+     * @param {String} attribute - atributo que sera inserido 
      * @param {TElement} father - elemento pai
      * @description metodo inserção de um atributo
      */
