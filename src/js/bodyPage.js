@@ -1,6 +1,7 @@
 import * as parchment from "../class/model.js";
+import { head } from "./headPage.js";
 
-const head = new parchment.TElement(document.head);
+head.titlePage.addElement('text', new parchment.TText('Parchment'));
 
 for (let i = 1; i <= 2; i++){
     head.addElement('link'+i,'LINK');
