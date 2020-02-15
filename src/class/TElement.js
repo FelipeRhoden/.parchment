@@ -90,14 +90,28 @@ export class TElement {
      * Recebe uma string com o nome do Object HTMLElement e criar o elemento
      * @constructor
      * @param {string} element - recebe uma string com o nome de uma tag html
+     * @param {Object} options - recebe um objeto com dados de propriedades ou funções
      */
 
-    constructor(element){
+    constructor(element, options){
+        options = options || {};
+
         if (!element.tagName)
             this._element = document.createElement(element);
         else 
             this._element = element;
         this._data = { _element: this._element };
+        
+        for(let prop in options) {
+            try{
+                if (prop[0] === '$') 
+                    this[prop.slice(1, prop.length)](...options[prop])
+                else
+                    this[prop] = options[prop];
+            }catch(err){
+                console.error(err);
+            }
+        }
     }
 
     /** ============= static method ============= */
@@ -144,19 +158,21 @@ export class TElement {
      * @static
      * @method
      * @param {string} name - nome da propriedade dada ao elemento
-     * @param {TElement} element - elemento que sera inserido 
+     * @param {TElement} element - elemento que sera inserido
+     * @param {Object} options - recebe um objeto com dados de propriedades ou funções 
      * @param {TElement} father - elemento pai
      * @description metodo inserção de um elemento filho
      */
 
-    static addElement(name, element, father) {
+    static addElement(name, element, options, father) {
 
         father = father || this;
+        options = options || {};
 
         try {
 
             if (!element.element || element.element == undefined)
-                element = new TElement(element);
+                element = new TElement(element, options);
 
             if (father[name] != undefined || father['_' + name] != undefined)
                 throw 'Propriedade ja existente'
@@ -193,17 +209,19 @@ export class TElement {
      * @method
      * @param {string} name - nome da função
      * @param {function} func - função que sera executada
+     * @param {boolean} options - define se ocorre antes ou depois da ação do elemento pai
      * @param {TElement} father - elemento pai
      * @description metodo inserção de uma função em um elemento
      */
 
-    static addEvent(name, func, father) {
+    static addEvent(name, func, options, father) {
 
         father = father || this;
+        options = options || false;
 
         try {
 
-            father.element.addEventListener(name, func, false);
+            father.element.addEventListener(name, func, options);
 
         } catch(err) {
             console.error('erro em inserção evento:' + err);
